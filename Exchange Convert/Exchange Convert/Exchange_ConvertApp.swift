@@ -1,9 +1,3 @@
-//
-//  Exchange_ConvertApp.swift
-//  Exchange Convert
-//
-//  Created by Osama Nidal on 16/03/2026.
-//
 
 import SwiftUI
 

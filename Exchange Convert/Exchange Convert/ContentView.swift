@@ -1,7 +1,7 @@
 
 import SwiftUI
 
-let backgroundGradient = LinearGradient(colors: [Color.orange,Color.red], startPoint: .top, endPoint: .bottom)
+let backgroundGradient = LinearGradient(colors: [Color.orange,Color.red], startPoint: .leading, endPoint: .trailing)
 
 struct ContentView: View {
     var body: some View {
@@ -9,7 +9,7 @@ struct ContentView: View {
             ZStack {
                backgroundGradient
                     .ignoresSafeArea()
-                VStack (alignment: .leading){
+                VStack (){
                     Rectangle()
                         .fill(Color.white)
                         .cornerRadius(30)
@@ -19,7 +19,6 @@ struct ContentView: View {
                         .overlay(starOverlay)
                 }
                 .navigationTitle("Welcome")
-                .font(.title)
                 .toolbarColorScheme(.dark, for: .navigationBar)
             }
         }
@@ -32,10 +31,17 @@ private var starOverlay: some View {
             .frame(maxWidth: .infinity,alignment: .leading)
             .font(.title2)
             .bold()
+        HStack(){
+            menus()
+            Image(systemName: "arrow.right")
+                .font(.system(size: 20))
+            menus()
+        }
         Spacer()
     }
     .padding(.top, 60)
     .padding(.leading, 20)
+    .padding(.trailing,20)
    }
 
 #Preview {

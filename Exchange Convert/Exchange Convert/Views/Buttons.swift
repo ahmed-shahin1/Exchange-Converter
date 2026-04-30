@@ -3,7 +3,7 @@
 import SwiftUI
 import FlagKit
 
-struct menus: View {
+struct Buttons: View {
     @State private var selectedCurrency: String = "AED"
     @State private var showSheet: Bool = false
     var body: some View {
@@ -33,14 +33,21 @@ struct menus: View {
              }
          }
     
+    
+    
     struct MyNextView: View {
         var body: some View {
             Text("Hello World")
+            
+            
         }
+        
     }
+    
+    
 }
 
 
 #Preview {
-    menus()
+    Buttons()
 }

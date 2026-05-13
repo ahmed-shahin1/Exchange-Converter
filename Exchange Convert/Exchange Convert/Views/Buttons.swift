@@ -33,18 +33,28 @@ struct Buttons: View {
              }
          }
     
-    
-    
     struct MyNextView: View {
+        let currencyData = CurrencyData.currencyToCountry
         var body: some View {
-            Text("Hello World")
-            
-            
+            NavigationStack{
+                List {
+                    ForEach(currencyData.sorted(by: { $0.key < $1.key }), id: \.key) { currency, country in
+                           HStack {
+                               
+                               if let flag = Flag(countryCode: country) {
+                                   Image(uiImage: flag.image(style: .circle)
+                                   )
+                                }
+                               
+                               Text(currency)
+                                   
+                           }
+                       }
+                }
+                .navigationTitle("Select Currency")
+            }
         }
-        
     }
-    
-    
 }
 
 
